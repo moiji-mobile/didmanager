@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "DIDManager",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sourceAddress",
+		"sourcePort",
+		"callId",
+		"lastUsed"
+	],
+	"name" : "DIDDialogue",
+	"type" : "normal"
+}

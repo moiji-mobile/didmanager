@@ -5,7 +5,19 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"sipParser",
+		"logger",
+		"sem",
+		"dialogues",
+		"branchSeed",
+		"localSipHostname",
+		"remoteSipHostname",
+		"localSipPort",
+		"remoteSipPort",
+		"localUdpTransport",
+		"remoteUdpTransport"
+	],
 	"name" : "DIDManager",
 	"type" : "normal"
 }
