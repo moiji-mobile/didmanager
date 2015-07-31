@@ -18,9 +18,19 @@ sipHandleRoutedRequest: aRequest from: aTransport with: aDatagram
 
 	self flag: #todo. "Check if there is a lr, extend the SIPGrammar/Parser for route_rec
 	and verify that the packet comes from the right transport"
-	system := SMPPMongoDIDCustomer new
-		customerName: 'Ad-hoc-routing';
-		sipProxyIP: route address host;
-		sipProxyPort: (route address port ifNil: [5060] ifNotNil: [:port | port asInteger]);
-		yourself.
+
+	aTransport == localUdpTransport
+		ifTrue: [
+			system := SMPPMongoDIDCustomer new
+				customerName: 'Ad-hoc-routing';
+				sipProxyIP: route address host;
+				sipProxyPort: (route address port ifNil: [5060] ifNotNil: [:port | port asInteger]);
+				yourself]
+		ifFalse: [
+			system := SMPPMongoDIDCustomer new
+				customerName: 'Ad-hoc-return';
+				sipProxyIP: aRequest dest host;
+				sipProxyPort: ((aRequest dest port ifNil: [5060] ifNotNil: [:port | port asInteger]));
+				yourself].
+
 	^self statelesHandleRequest: aRequest from: aTransport datagram: aDatagram to: system. 

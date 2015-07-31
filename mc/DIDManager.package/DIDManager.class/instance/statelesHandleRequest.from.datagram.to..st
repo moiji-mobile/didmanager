@@ -22,7 +22,9 @@ statelesHandleRequest: aRequest from: aTransport datagram: aDatagram to: aSystem
          field values, even if a Route header field is already present. 
 
 	."
-	aRequest prependParameter: 'Record-Route' with: self remoteRecordRoute.
+	aTransport == localUdpTransport
+		ifTrue: [aRequest prependParameter: 'Record-Route' with: self remoteRecordRoute]
+		ifFalse: [aRequest prependParameter: 'Record-Route' with: self localRecordRoute].
 	aRequest prependParameter: 'Record-Route' with: (self buildRecordRoute: aSystem).
 
 	"5. Optionally add additional header fields -> nothing"
