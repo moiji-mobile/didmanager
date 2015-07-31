@@ -1,0 +1,3 @@
+accessing
+areaDescription
+	^'DID Manager'

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LogArea",
+	"category" : "DIDManager",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LogAreaDID",
+	"type" : "normal"
+}
