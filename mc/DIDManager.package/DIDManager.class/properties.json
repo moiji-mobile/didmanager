@@ -16,7 +16,8 @@
 		"localSipPort",
 		"remoteSipPort",
 		"localUdpTransport",
-		"remoteUdpTransport"
+		"remoteUdpTransport",
+		"database"
 	],
 	"name" : "DIDManager",
 	"type" : "normal"
