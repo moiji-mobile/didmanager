@@ -25,6 +25,11 @@ baseline01: spec
 				spec
 					className: #ConfigurationOfVoyageMongo;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ].
+					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ];
+			project: 'SMPP' with: [
+				spec
+					className: #ConfigurationOfSMPP;
+					versionString: #'bleedingEdge';
+					repository: 'http://smalltalkhub.com/mc/osmocom/SMPP/main/' ].
 		spec package: #DIDManager with: [
-				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'VoyageMongo' ). ]. ].
+				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'VoyageMongo' 'SMPP' ). ]. ].
