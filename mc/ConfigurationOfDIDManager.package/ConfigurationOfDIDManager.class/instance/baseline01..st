@@ -4,7 +4,7 @@ baseline01: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec repository: 'http://smalltalkhub.com/mc/hfreyther2/Junk/main/'.
+		spec repository: 'http://source.selfish.org/o/private'.
 		spec 
 			project: 'OsmoSIP' with: [
 				spec
@@ -25,11 +25,6 @@ baseline01: spec
 				spec
 					className: #ConfigurationOfVoyageMongo;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ];
-			project: 'SMPPRouter' with: [
-				spec
-					className: #ConfigurationOfSMPPRouter;
-					versionString: #'bleedingEdge';
-					repository: 'http://smalltalkhub.com/mc/osmocom/SMPPRouter/main/' ].
+					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ].
 		spec package: #DIDManager with: [
-				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'VoyageMongo' 'SMPPRouter' ). ]. ].
+				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'VoyageMongo' ). ]. ].
