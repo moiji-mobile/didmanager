@@ -23,17 +23,20 @@ sipHandleResponse: aResponse from: aTransport with: aDatagram
 	"8. Optionally rewrite Record-Route header field values"
 	storedDestRoute := aResponse parameter: 'Record-Route' ifAbsent: [
 		logger logNotice: 'Reply to something we have not routed?' with: { }.
-		^self
+		nil
 	].
-	"Remove the two routes"
-	aResponse removeParameter: 'Record-Route'.
-	aResponse removeParameter: 'Record-Route'.
-	self flag: #todo. "Check if this could have been our route?"
-	newRoute := aTransport == localUdpTransport
-		ifTrue: [self remoteRecordRoute]
-		ifFalse: [self localRecordRoute].
-	aResponse prependParameter: 'Record-Route' with: newRoute.
-	aResponse prependParameter: 'Record-Route' with: storedDestRoute.
+	"Remove the two routes if the equipment manages to follow the spec"
+	storedDestRoute ifNotNil: [
+		aResponse removeParameter: 'Record-Route'.
+		aResponse removeParameter: 'Record-Route'.
+
+		self flag: #todo. "Check if this could have been our route?"
+		newRoute := aTransport == localUdpTransport
+			ifTrue: [self remoteRecordRoute]
+			ifFalse: [self localRecordRoute].
+		aResponse prependParameter: 'Record-Route' with: newRoute.
+		aResponse prependParameter: 'Record-Route' with: storedDestRoute].
+
 	"9. Forward the response"
 	datagram := OsmoUDPDatagram new
 		data: aResponse asDatagram;
