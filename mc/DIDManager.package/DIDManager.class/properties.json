@@ -9,7 +9,6 @@
 		"sipParser",
 		"logger",
 		"sem",
-		"dialogues",
 		"branchSeed",
 		"localSipHostname",
 		"remoteSipHostname",

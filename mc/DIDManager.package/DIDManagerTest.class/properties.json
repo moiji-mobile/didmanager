@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"didManager"
+		"didManager",
+		"localMock",
+		"remoteMock"
 	],
 	"name" : "DIDManagerTest",
 	"type" : "normal"

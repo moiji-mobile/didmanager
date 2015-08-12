@@ -1,12 +1,18 @@
 as yet unclassified
 setUp
 	| route customer db |
+
+	localMock := SIPTransportMock new.
+	remoteMock := SIPTransportMock new.
+
 	didManager := DIDManager new.
 	didManager localSipHostname: '127.0.0.1'.
 	didManager remoteSipHostname: '127.0.0.1'.
 	didManager localSipPort: 5066.
 	didManager remoteSipPort: 5067.
 	didManager privBranchSeed: 'a483c4f6'.
+	didManager localTransport: localMock.
+	didManager remoteTransport: remoteMock.
 
 	customer := SMPPMongoDIDCustomer new
 					sipProxyIP: '127.0.0.2';
