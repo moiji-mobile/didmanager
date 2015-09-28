@@ -4,3 +4,4 @@ initialize
 	sem := Semaphore forMutualExclusion.
 	branchSeed := (OsmoSecureRandom rand: 4) hex.
 	logger := LogStructuredLogger for: self area: #did.
+	statsdClient := NullStatsDClient new.

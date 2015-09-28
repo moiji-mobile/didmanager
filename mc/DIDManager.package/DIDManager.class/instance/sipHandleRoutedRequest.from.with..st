@@ -3,6 +3,7 @@ sipHandleRoutedRequest: aRequest from: aTransport with: aDatagram
 	| route  system |
 	"This is the route that got us here..."
 	route := aRequest parameter: 'Route' ifAbsent: [
+		statsdClient increment: 'did.routed.missingFirstRoute' rate: 1.
 		logger logError: 'Request has no route' with: { 'data' -> aDatagram data hex }.
 		self returnError: 400 with: 'Missing route' to: aDatagram transport: aTransport.
 		^self
@@ -10,6 +11,7 @@ sipHandleRoutedRequest: aRequest from: aTransport with: aDatagram
 	"This is the route we added to remember the target system"
 	aRequest removeParameter: 'Route'.
 	route := aRequest parameter: 'Route' ifAbsent: [
+		statsdClient increment: 'did.routed.missingSecondRoute' rate: 1.
 		logger logError: 'Request has no route' with: { 'data' -> aDatagram data hex }.
 		self returnError: 400 with: 'Missing route' to: aDatagram transport: aTransport.
 		^self
