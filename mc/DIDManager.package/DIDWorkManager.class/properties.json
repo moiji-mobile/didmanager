@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "WorkManager",
+	"category" : "DIDManager",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"didManager"
+	],
+	"name" : "DIDWorkManager",
+	"type" : "normal"
+}
