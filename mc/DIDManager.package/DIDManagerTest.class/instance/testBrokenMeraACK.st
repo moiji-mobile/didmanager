@@ -2,8 +2,8 @@ as yet unclassified
 testBrokenMeraACK
 	| datagram data |
 	
-	"This tests that beside the mera system not including the route headers
-	we know where to route the bye to."
+	"This tests an ACK for a 503 not having any routes set and requires us
+	to route it based on the TO address again"
 
 	data := OrderedCollection new.
 	remoteMock onData: [:msg |
