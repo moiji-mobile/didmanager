@@ -1,6 +1,6 @@
 as yet unclassified
 setUp
-	| route customer db |
+	| customer db |
 
 	localMock := SIPTransportMock new.
 	remoteMock := SIPTransportMock new.
