@@ -23,9 +23,9 @@ statelesHandleRequest: aRequest from: aTransport datagram: aDatagram to: aSystem
 
 	."
 	aTransport == localUdpTransport
-		ifTrue: [aRequest prependParameter: 'Record-Route' with: self remoteRecordRoute]
-		ifFalse: [aRequest prependParameter: 'Record-Route' with: self localRecordRoute].
-	aRequest prependParameter: 'Record-Route' with: (self buildRecordRoute: aSystem).
+		ifTrue: [aRequest prependParameter: 'Record-Route' with: self remoteRecordRoute after: 'Via']
+		ifFalse: [aRequest prependParameter: 'Record-Route' with: self localRecordRoute after: 'Via'].
+	aRequest prependParameter: 'Record-Route' with: (self buildRecordRoute: aSystem) after: 'Via'.
 
 	"5. Optionally add additional header fields -> nothing"
 	"6. Postprocess routing information"

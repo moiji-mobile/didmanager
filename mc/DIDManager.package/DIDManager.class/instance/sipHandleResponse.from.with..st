@@ -37,8 +37,8 @@ sipHandleResponse: aResponse from: aTransport with: aDatagram
 		newRoute := aTransport == localUdpTransport
 			ifTrue: [self remoteRecordRoute]
 			ifFalse: [self localRecordRoute].
-		aResponse prependParameter: 'Record-Route' with: newRoute.
-		aResponse prependParameter: 'Record-Route' with: storedDestRoute].
+		aResponse prependParameter: 'Record-Route' with: newRoute after: 'Via'.
+		aResponse prependParameter: 'Record-Route' with: storedDestRoute after: 'Via'].
 
 	"9. Forward the response"
 	datagram := OsmoUDPDatagram new
