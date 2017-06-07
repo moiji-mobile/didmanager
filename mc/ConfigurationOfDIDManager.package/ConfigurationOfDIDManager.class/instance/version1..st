@@ -11,7 +11,7 @@ version1: spec
 			project: 'OsmoSIP' with: '0.1-baseline';
 			project: 'OsmoMGCP' with: '0.1-baseline';
 			project: 'OsmoLogging' with: '0.1-baseline';
-			project: 'VoyageMongo' with: '1.3.3';
+			project: 'VoyageMongo' with: '1.3.1';
 			project: 'SMPPRouter' with: '0.2-baseline';
 			project: 'ZincHTTPComponents' with: '2.6.6'.
 		spec package: #DIDManager with: 'DIDManager-HolgerHansPeterFreyther.12'. ].
