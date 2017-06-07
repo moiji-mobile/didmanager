@@ -21,11 +21,6 @@ baseline01: spec
 					className: #ConfigurationOfOsmoLogging;
 					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Logging/main/' ];
-			project: 'VoyageMongo' with: [
-				spec
-					className: #ConfigurationOfVoyageMongo;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ];
 			project: 'SMPPRouter' with: [
 				spec
 					className: #ConfigurationOfSMPPRouter;
@@ -38,4 +33,4 @@ baseline01: spec
 					loads: #('REST' );
 					repository: 'http://mc.stfx.eu/ZincHTTPComponents/' ].
 		spec package: #DIDManager with: [
-				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'VoyageMongo' 'SMPPRouter' ). ]. ].
+				spec requires: #('OsmoLogging' 'OsmoSIP' 'OsmoMGCP' 'SMPPRouter' ). ]. ].
