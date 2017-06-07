@@ -21,11 +21,8 @@ baseline02: spec
 					className: #ConfigurationOfOsmoLogging;
 					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Logging/main/' ];
-			project: 'VoyageMongo' with: [
-				spec
-					className: #ConfigurationOfVoyageMongo;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ];
+			baseline: 'VoyageMongo' with: [
+					spec repository: 'github://zecke/voyage-stable:1.3.1-patch/mc'];
 			project: 'SMPPRouter' with: [
 				spec
 					className: #ConfigurationOfSMPPRouter;
