@@ -5,9 +5,7 @@ baseline02: spec
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
 		spec repository: 'http://source.selfish.org/o/private'.
-		spec
-			baseline: 'VoyageMongo' with: [
-					spec repository: 'github://zecke/voyage-stable:1.3.1-patch/mc'];
+		spec 
 			project: 'OsmoSIP' with: [
 				spec
 					className: #ConfigurationOfOsmoSIP;
@@ -23,6 +21,11 @@ baseline02: spec
 					className: #ConfigurationOfOsmoLogging;
 					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/osmocom/Logging/main/' ];
+			project: 'VoyageMongo' with: [
+				spec
+					className: #ConfigurationOfVoyageMongo;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/estebanlm/Voyage/main/' ];
 			project: 'SMPPRouter' with: [
 				spec
 					className: #ConfigurationOfSMPPRouter;
